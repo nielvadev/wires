@@ -57,7 +57,7 @@
   font-family: var(--font-primary);
   background-color: var(--primary);
   color: var(--secondary);
-  border: 1px solid var(--primary);
+  border: 1px solid var(--secondary);
   padding: 5px 20px;
   border-radius: 10px;
   font-size: 1.2rem;
@@ -321,7 +321,7 @@
   .md {
     display: none;
   }
- 
+
   .home-footer,
   .link-item {
     width: 100%;
@@ -357,7 +357,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
   .home-wrapper-info-txt {
     width: 80%;
   }
@@ -399,7 +398,7 @@
     display: none;
   }
 
-   .home-content-one-left {
+  .home-content-one-left {
     width: 75%;
   }
   .home-content-one-right {
@@ -541,11 +540,11 @@
 }
 
 @media screen and (max-width: 315px) {
-  .circle-L, .circle-R {
+  .circle-L,
+  .circle-R {
     display: none;
   }
   .home-wrapper-info-img {
     display: none;
   }
 }
-
