@@ -15,7 +15,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./protected/protected.module').then((m) => m.ProtectedModule),
   },
-  { path: '**', redirectTo: 'auth' },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
