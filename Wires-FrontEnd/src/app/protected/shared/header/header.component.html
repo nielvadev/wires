@@ -1,0 +1,51 @@
+<div class="header">
+  <div class="header-logo">
+    <a href="/">
+      <img src="assets/img/Group 2.png" alt="logo" class="logo" />
+    </a>
+  </div>
+  <div class="header-section">
+    <div class="header-user">
+      <a>{{ username }}</a>
+    </div>
+
+    <div class="header-notify">
+      <a class="btn-header">
+        <img src="assets/icon/chatbox-ellipses.png" alt="message" class="icon" />
+      </a>
+    </div>
+
+    <div class="header-options">
+      <a class="btn-header" (click)="openOptions()">
+        <img
+          src="assets/icon/menu.png"
+          alt="options"
+          id="opt-icon"
+          class="icon"
+        />
+      </a>
+      <div class="dropdown" id="options" *ngIf="showOptions">
+        <div class="dropdown-name">
+          <h3>{{ username }}</h3>
+        </div>
+        <div class="dropdown-item" (click)="toCreateMsg()">
+          <img src="assets/icon/create.png" alt="create" class="dropdown-icon" />
+          <a>Create Messages</a>
+        </div>
+        <div class="dropdown-item" (click)="toMyMsgs()">
+          <img src="assets/icon/send.png" alt="create" class="dropdown-icon" />
+          <a>My Messages</a>
+        </div>
+        <div class="dropdown-item" (click)="toAllMsgs()">
+          <img src="assets/icon/chatbubbles-sharp.png" alt="create" class="dropdown-icon" />
+          <a>See all messages</a>
+        </div>
+        <div class="dropdown-item" (click)="logout()">
+          <img src="assets/icon/log-in-sharp.png" alt="create" class="dropdown-icon" />
+          <a>Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

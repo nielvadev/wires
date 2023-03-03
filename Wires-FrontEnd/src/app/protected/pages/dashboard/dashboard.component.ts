@@ -3,9 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styles: [
-  ]
+  styleUrls: ['../../protected.component.css'],
 })
-export class DashboardComponent {
-
-}
+export class DashboardComponent {}

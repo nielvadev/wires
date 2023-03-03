@@ -1,1 +1,68 @@
-<p>create works!</p>
+<div class="container">
+  <div class="dashboard-form">
+    <!-- CREATE MESSAGE -->
+    <form
+      class="form"
+      autocomplete="off"
+      [formGroup]="createMsgForm"
+      (ngSubmit)="createMessage()"
+    >
+      <h1>Create Message</h1>
+
+      <label class="lbl-title" for="title">Title messages</label>
+      <input
+        type=""
+        formControlName="title"
+        placeholder="Talk about me"
+        class="input-title-form"
+        [(ngModel)]="titleTemp"
+      />
+      <label class="lbl-text" for="text">Messages</label>
+      <textarea
+        type="text"
+        formControlName="text"
+        placeholder="Create message for share white friends. Máx 700 chars"
+        class="input-text-form"
+        maxlength="700"
+        [(ngModel)]="textTemp"
+      ></textarea>
+      <button
+        type="submit"
+        class="btn-share"
+        [disabled]="createMsgForm.invalid"
+      >
+        Share
+      </button>
+    </form>
+  </div>
+
+  <div class="dashboard-cards-section block">
+    <!-- CARD PREVIEW -->
+    <div class="cardpreview" *ngFor="let message of messages; index as i">
+      <div class="cardpreview-title">
+        {{ titleTemp }}
+      </div>
+      <div class="cardpreview-content">
+        {{ textTemp }}
+      </div>
+      <div class="cardpreview-footer">
+        <div class="card-date">
+          <span>{{ updatedAtTemp | date : "short" }}</span>
+        </div>
+        <div class="cardpreview-user">
+          {{ usernameTemp }}
+        </div>
+      </div>
+    </div>
+    <div class="comment-card">
+      <div class="comment-card-header"></div>
+      <div class="comment-card-content">
+        Comment on the publication of {{ usernameTemp }}
+      </div>
+      <div class="comment-card-footer">
+        <img src="assets/icon/Frame 1.png" alt="" class="comment-card-avatar" />
+        <button class="btn-cc">Send</button>
+      </div>
+    </div>
+  </div>
+</div>

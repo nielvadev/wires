@@ -1,1 +1,21 @@
-<p>mymessages works!</p>
+<h1>My Messages</h1>
+
+<div class="dashboard-cards-section">
+  <!-- CARDS -->
+  <div class="card" *ngFor="let message of messages; index as i">
+    <div class="card-title">
+      {{ messages[i].title | titlecase }}
+    </div>
+    <div class="card-content">
+      {{ messages[i].text | titlecase }}
+    </div>
+    <div class="card-footer">
+      <div class="card-date">
+        <span>{{ messages[i].updatedAt | date : "short" }}</span>
+      </div>
+      <div class="card-user">
+        {{ myUsername }}
+      </div>
+    </div>
+  </div>
+</div>
