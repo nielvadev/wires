@@ -1,1 +1,82 @@
-<p>login works!</p>
+<div class="title">
+  <h2>Sign up</h2>
+</div>
+
+<div class="section">
+  <form
+    class="sign-form"
+    autocomplete="off"
+    [formGroup]="loginForm"
+    (ngSubmit)="login()"
+  >
+    <!-- NickName Adress -->
+    <div class="form-group">
+      <div class="form-label">
+        <label for="username">NickName</label>
+      </div>
+      <div class="form-input">
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          formControlName="username"
+          (focus)="clearError()"
+          placeholder="username"
+        />
+      </div>
+    </div>
+
+    <!-- Error message -->
+    <div class="form-group">
+      <div class="form-message-error">
+        <div class="error-message" *ngIf="fieldNotNull('username')">
+          This field is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <div class="form-label">
+        <label for="password">Password</label>
+      </div>
+      <div class="form-input">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          (focus)="clearError()"
+          placeholder=""
+        />
+      </div>
+    </div>
+
+    <!-- Error message -->
+    <div class="form-group">
+      <div class="form-message-error">
+        <div class="error-message" *ngIf="fieldNotNull('password')">
+          This field is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="form-group">
+      <button type="submit" class="form-btn" [disabled]="loginForm.invalid">
+        Sign In
+      </button>
+    </div>
+
+    <!-- Error message -->
+    <div class="form-group">
+      <div class="form-message-error">
+        <div class="error-message center">{{ message }}</div>
+      </div>
+    </div>
+  </form>
+
+  <div class="form-group">
+    <div class="form-label" id="remember-me">Remember me</div>
+  </div>
+</div>

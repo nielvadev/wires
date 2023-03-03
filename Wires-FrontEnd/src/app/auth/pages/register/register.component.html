@@ -1,1 +1,121 @@
-<p>register works!</p>
+<div class="title">
+  <h2>Sign in</h2>
+</div>
+
+<div class="section">
+  <form
+    class="sign-form"
+    autocomplete="off"
+    [formGroup]="registerForm"
+    (ngSubmit)="register()"
+  >
+    <!-- Nickname / Username-->
+    <div class="form-group">
+      <div class="form-label">
+        <label for="username">Nickname</label>
+      </div>
+      <div class="form-input">
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          formControlName="username"
+          placeholder="Nickname"
+        />
+      </div>
+    </div>
+    <!-- Error Message -->
+    <div class="form-group">
+      <div class="form-message-error">
+        <div class="error-message" *ngIf="fieldNotNull('username')">
+          This field is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Name -->
+    <div class="form-group">
+      <div class="form-label">
+        <label for="fullname">Name</label>
+      </div>
+      <div class="form-input">
+        <input
+          type="text"
+          class="form-control"
+          id="fullname"
+          formControlName="fullname"
+          placeholder="Name"
+        />
+      </div>
+    </div>
+    <!-- Error Message -->
+    <div class="form-group">
+      <div class="form-message-error">
+        <div class="error-message" *ngIf="fieldNotNull('fullname')">
+          This field is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Email Adress -->
+    <div class="form-group">
+      <div class="form-label">
+        <label for="email">Email Adress</label>
+      </div>
+      <div class="form-input">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+          placeholder="Example@gmail.com"
+        />
+      </div>
+    </div>
+    <!-- Error Message -->
+    <div class="form-group">
+      <div class="form-message-error">
+        <div class="error-message" *ngIf="fieldNotNull('email')">
+          This field is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <div class="form-label">
+        <label for="password">Password</label>
+      </div>
+      <div class="form-input">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          placeholder=""
+        />
+      </div>
+    </div>
+    <!-- Error Message -->
+    <div class="form-group">
+      <div class="form-message-error">
+        <div class="error-message" *ngIf="fieldNotNull('password')">
+          This field is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="form-group">
+      <button type="submit" class="form-btn" [disabled]="registerForm.invalid">
+        Create
+      </button>
+    </div>
+    <!-- Error Message -->
+    <div class="form-group">
+      <div class="form-message-error">
+        <div class="error-message">{{ errorMessage }}</div>
+      </div>
+    </div>
+  </form>
+</div>
